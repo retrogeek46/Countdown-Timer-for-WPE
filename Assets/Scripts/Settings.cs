@@ -10,7 +10,6 @@ public class Settings : MonoBehaviour {
     public Dropdown durationDropdown;
     // refrence to WallpaperManager to  change wallpaper
     public WallpaperManager wallpaperManager;
-
     private void Start() {
         // Initialize wallpaper with previous settings using PlayerPrefs
         ChooseWallpaper(PlayerPrefs.GetInt("currentWallpaper", 0));
@@ -25,7 +24,7 @@ public class Settings : MonoBehaviour {
     // Set time denomination for changeof wallpaper at regular intervals
     public void SetDenomination(int choice) {
         PlayerPrefs.SetInt("denomintaionDropdown", choice);
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
         switch (choice) {
             case 0:
                 wallpaperManager.denomination = TimeDenomination.Seconds;
@@ -47,7 +46,7 @@ public class Settings : MonoBehaviour {
     // Set duration of selected denomination for change of wallpaper at regular intervals
     public void SetDuration(int choice) {
         PlayerPrefs.SetInt("durationDropdown", choice);
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
         switch (choice) {
             case 0:
                 wallpaperManager.duration = 0;
